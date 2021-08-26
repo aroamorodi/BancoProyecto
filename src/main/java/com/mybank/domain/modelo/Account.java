@@ -22,15 +22,10 @@ public class Account{
 	 * @return false si la cantidad es igual a 0 o menor que 0
 	 */
 	
-	public boolean deposit(double cantidadDepositar) {
+	public void deposit(double cantidadDepositar){
 		if(cantidadDepositar>0) {
-			this.balance+=cantidadDepositar;
-			return true;
+			this.balance+=cantidadDepositar;		
 		}
-		else {
-			return false;
-		}
-		
 		
 	}
 	
@@ -41,13 +36,13 @@ public class Account{
 	 * @return false si la cantidad que queremos retirar es mayor 
 	 */
 	
-	public boolean withdraw(double cantidadRetirar) {
+	public void withdraw(double cantidadRetirar) throws OverdraftException{
 		if(cantidadRetirar<balance) {
 			balance = balance - cantidadRetirar;
-			return true;
+			
 		}
 		else {
-			return false;
+			throw new OverdraftException("NO SE PUEDE RETIRAR EL DINERO TIENES DEFICIT DE ", (cantidadRetirar - balance));
 		}
 		
 	}

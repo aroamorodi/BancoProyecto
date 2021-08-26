@@ -14,12 +14,12 @@ public class CheckingAccount extends Account{
 	}
 
 	@Override
-	public boolean withdraw(double cantidadRetirar) {
-		boolean resultado = true;
+	public void withdraw(double cantidadRetirar) throws OverdraftException{
+		
 		if ( balance < cantidadRetirar ) {
 		double overdraftNeeded = cantidadRetirar - balance;
 		if ( overdraftAmount < overdraftNeeded ) {
-		resultado = false;
+		throw new OverdraftException("NO SE PUEDE RETIRAR EL DINERO TIENES UN DEFICIT DE ", (cantidadRetirar-balance));
 		} else {
 		balance = 0.0;
 		overdraftAmount -= overdraftNeeded;
@@ -27,7 +27,7 @@ public class CheckingAccount extends Account{
 		} else {
 		balance -= cantidadRetirar;
 		}
-		return resultado;
+		
 	}
 	
 	
