@@ -14,7 +14,30 @@ public class CheckingAccount extends Account{
 	}
 	
 	public boolean withdraw(double amt) {
-		return false;
+		boolean resultado = true;
+		
+		if ( balance < amt ) {
+			double overdraftNeeded = amt - balance;
+			if ( overdraftAmount < overdraftNeeded ) {
+			resultado = false;
+			} else {
+			balance = 0.0;
+			overdraftAmount -= overdraftNeeded;
+			}
+			} else {
+			balance -= amt;
+			}
+			return resultado;
+
 	}
+
+	@Override
+	public String toString() {
+		return "CheckingAccount [overdraftAmount=" + overdraftAmount + ", balance=" + balance + ", getBalance()="
+				+ getBalance() + ", toString()=" + super.toString() + ", getClass()=" + getClass() + ", hashCode()="
+				+ hashCode() + "]";
+	}
+	
+	
 
 }
