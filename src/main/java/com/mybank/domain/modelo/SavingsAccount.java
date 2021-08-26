@@ -9,12 +9,6 @@ public class SavingsAccount extends Account{
 		this.interestRate = interestRate;
 	}
 
-	@Override
-	public String toString() {
-		return "SavingsAccount [interestRate=" + interestRate + ", balance=" + balance + ", getBalance()="
-				+ getBalance() + ", toString()=" + super.toString() + ", getClass()=" + getClass() + ", hashCode()="
-				+ hashCode() + "]";
-	}
 	
 	
 

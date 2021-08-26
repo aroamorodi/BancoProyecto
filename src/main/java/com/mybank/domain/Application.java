@@ -23,15 +23,44 @@ public class Application
 		
 		customer2.setAccount(checkingAccount);
 		
-		Customer customer3 = new Customer("Maria", "Soley");
+		Customer customer3 = new Customer("Tim", "Soley");
 		
-		customer3.setAccount(checkingAccount);
+		CheckingAccount checkingAccount2 = new CheckingAccount(500, 500);
+		
+		customer3.setAccount(checkingAccount2);
+		
+		Customer customer4 = new Customer("Maria", "Soley");
+		
+		customer4.setAccount(checkingAccount2);
+		
+		savingAccount.withdraw(150);
+		savingAccount.withdraw(22.50);
+		savingAccount.withdraw(400);
 		
 		System.out.println(customer1);
 		
+		
+		checkingAccount.withdraw(150);
+		checkingAccount.deposit(22.50);
+		checkingAccount.withdraw(47.62);
+		checkingAccount.withdraw(400);
+		
 		System.out.println(customer2);
 		
+		
+		checkingAccount2.withdraw(150);
+		checkingAccount2.deposit(22.50);
+		checkingAccount2.withdraw(47.62);
+		checkingAccount2.withdraw(400);
+		
 		System.out.println(customer3);
+		
+		checkingAccount2.deposit(150);
+		checkingAccount2.withdraw(750);
+		
+		System.out.println(customer4);
+		
+		
 		
 		
 		
