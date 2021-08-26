@@ -1,17 +1,12 @@
 package com.mybank.domain.modelo;
 
-import java.io.Serializable;
 
-public class Account implements Serializable{
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class Account{
 	
-	private double balance;
+	protected double balance;
 
-	public Account(double balance) {
+	protected Account(double balance) {
 		super();
 		this.balance = balance;
 	}
